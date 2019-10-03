@@ -31,7 +31,8 @@ var renderText = function (ctx, fontSize, text, x, y) {
 };
 
 // Функция отрисовки столбика
-var renderBar = function (ctx, x, y, width, height) {
+var renderBar = function (ctx, barColor, x, y, width, height) {
+  ctx.fillStyle = barColor;
   ctx.fillRect(x, y, width, height);
 };
 
@@ -49,10 +50,9 @@ window.renderStatistics = function (ctx, names, times) {
     renderText(ctx, 16, Math.floor(times[i]), CLOUD_X + GAP_X + (GAP_X + BAR_WIDTH) * i, CLOUD_HEIGHT - TEXT_HEIGHT - (times[i] * BAR_HEIGTH / maxTime));
 
     if (names[i] === 'Вы') {
-      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+      renderBar(ctx, 'rgba(255, 0, 0, 1)', CLOUD_X + GAP_X + (GAP_X + BAR_WIDTH) * i, CLOUD_HEIGHT - GAP * 2 - TEXT_HEIGHT, BAR_WIDTH, GAP + TEXT_HEIGHT - (times[i] * BAR_HEIGTH / maxTime));
     } else {
-      ctx.fillStyle = 'hsl(240, ' + getRandomNumber(1, 100) + '%, ' + '50%)';
+      renderBar(ctx, 'hsl(240, ' + getRandomNumber(1, 100) + '%, ' + '50%)', CLOUD_X + GAP_X + (GAP_X + BAR_WIDTH) * i, CLOUD_HEIGHT - GAP * 2 - TEXT_HEIGHT, BAR_WIDTH, GAP + TEXT_HEIGHT - (times[i] * BAR_HEIGTH / maxTime));
     }
-    renderBar(ctx, CLOUD_X + GAP_X + (GAP_X + BAR_WIDTH) * i, CLOUD_HEIGHT - GAP * 2 - TEXT_HEIGHT, BAR_WIDTH, GAP + TEXT_HEIGHT - (times[i] * BAR_HEIGTH / maxTime));
   }
 };
