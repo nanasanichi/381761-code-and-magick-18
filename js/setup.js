@@ -39,12 +39,16 @@ var WIZARD_COUNT = 4;
 
 document.querySelector('.setup').classList.remove('hidden');
 
+var getRandomNumber = function (min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 var getRandomValueFromArray = function (arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+  return arr[getRandomNumber(0, arr.length)];
 };
 
 var getRandomCharacterName = function (arr1, arr2) {
-  return arr1[Math.floor(Math.random() * arr1.length)] + ' ' + arr2[Math.floor(Math.random() * arr2.length)];
+  return arr1[getRandomNumber(0, arr1.length - 1)] + ' ' + arr2[getRandomNumber(0, arr2.length - 1)];
 };
 
 var getRandomWizard = function () {
