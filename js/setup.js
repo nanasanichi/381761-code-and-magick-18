@@ -57,7 +57,7 @@ var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 var wizardBalls = document.querySelector('.setup-fireball-wrap');
 
 // Обработка событий формы
-var onPopupEscPress = function(evt) {
+var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC) {
     closeWindow();
   }
@@ -77,7 +77,7 @@ setupOpen.addEventListener('click', function () {
 	openWindow();
 });
 
-setupOpen.addEventListener('keydown', function() {
+setupOpen.addEventListener('keydown', function () {
   openWindow();
 });
 
@@ -85,20 +85,20 @@ setupClose.addEventListener('click', function () {
 	closeWindow();
 });
 
-setupClose.addEventListener('keydown', function(evt) {
+setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER) {
     closeWindow();
   }
 });
 
-submitButton.addEventListener('keydown', function(evt) {
+submitButton.addEventListener('keydown', function (evt) {
 	evt.preventDefault();
 	if (evt.keyCode === ENTER) {
     setupForm.submit();
   }
 });
 
-submitButton.addEventListener('click', function(evt) {
+submitButton.addEventListener('click', function (evt) {
 	evt.preventDefault();
 	setupForm.submit();
 });
@@ -157,7 +157,7 @@ var renderMoreWizards = function (wizards) {
 renderMoreWizards(getRandomWizard());
 
 // Валидация ввода имени персонажа
-setupUserName.addEventListener('invalid', function() {
+setupUserName.addEventListener('invalid', function () {
 	if (setupUserName.validity.tooShort) {
     setupUserName.setCustomValidity('Имя персонажа не может содержать менее 2 символов');
   } else if (setupUserName.validity.tooLong) {
