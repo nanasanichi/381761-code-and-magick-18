@@ -168,27 +168,23 @@ setupUserName.addEventListener('invalid', function () {
 });
 
 // Изменение цвета мантии, глаз и файербола персонажа по нажатию
-var wizardCoatOnClick = function () {
+var onWizardCoatClick = function () {
   var wizardCoatColor = getRandomValueFromArray(COAT_COLORS);
   wizardCoat.style.fill = wizardCoatColor;
 };
 
-wizardCoat.addEventListener('click', function () {
-  wizardCoatOnClick();
-});
+wizardCoat.addEventListener('click', onWizardCoatClick);
 
-var wizardEyesOnClick = function () {
+var onWizardEyesClick = function () {
 	var wizardEyeColor = getRandomValueFromArray(EYE_COLORS);
   wizardEyes.style.fill = wizardEyeColor;
 };
-wizardEyes.addEventListener('click', function () {
-  wizardEyesOnClick();
-});
 
-var wizardBallsOnClick = function () {
+wizardEyes.addEventListener('click', onWizardEyesClick);
+
+var onWizardBallsClick = function () {
 	var wizardBallColor = getRandomValueFromArray(FIREBALL_COLOR);
   wizardBalls.style.background = wizardBallColor;
 };
-wizardBalls.addEventListener('click', function () {
-  wizardBallsOnClick();
-});
+
+wizardBalls.addEventListener('click', onWizardBallsClick);
