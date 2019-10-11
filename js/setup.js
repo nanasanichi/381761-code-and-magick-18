@@ -36,11 +36,11 @@ var EYE_COLORS = [
   'green'
 ];
 var FIREBALL_COLOR = [
-	'#ee4830',
-	'#30a8ee',
-	'#5ce6c0',
-	'#e848d5',
-	'#e6e848'
+  '#ee4830',
+  '#30a8ee',
+  '#5ce6c0',
+  '#e848d5',
+  '#e6e848'
 ];
 var WIZARD_COUNT = 4;
 var ENTER = 13;
@@ -64,17 +64,17 @@ var onPopupEscPress = function (evt) {
 };
 
 var openWindow = function () {
-	setupWindow.classList.remove('hidden');
-	document.addEventListener('keydown', onPopupEscPress);
+  setupWindow.classList.remove('hidden');
+  document.addEventListener('keydown', onPopupEscPress);
 };
 
 var closeWindow = function () {
-	setupWindow.classList.add('hidden');
-	document.removeEventListener('keydown', onPopupEscPress);
+  setupWindow.classList.add('hidden');
+  document.removeEventListener('keydown', onPopupEscPress);
 };
 
 setupOpen.addEventListener('click', function () {
-	openWindow();
+  openWindow();
 });
 
 setupOpen.addEventListener('keydown', function () {
@@ -82,7 +82,7 @@ setupOpen.addEventListener('keydown', function () {
 });
 
 setupClose.addEventListener('click', function () {
-	closeWindow();
+  closeWindow();
 });
 
 setupClose.addEventListener('keydown', function (evt) {
@@ -92,15 +92,15 @@ setupClose.addEventListener('keydown', function (evt) {
 });
 
 submitButton.addEventListener('keydown', function (evt) {
-	evt.preventDefault();
-	if (evt.keyCode === ENTER) {
+  evt.preventDefault();
+  if (evt.keyCode === ENTER) {
     setupForm.submit();
   }
 });
 
 submitButton.addEventListener('click', function (evt) {
-	evt.preventDefault();
-	setupForm.submit();
+  evt.preventDefault();
+  setupForm.submit();
 });
 
 // Генератор магов
@@ -158,13 +158,13 @@ renderMoreWizards(getRandomWizard());
 
 // Валидация ввода имени персонажа
 setupUserName.addEventListener('invalid', function () {
-	if (setupUserName.validity.tooShort) {
+  if (setupUserName.validity.tooShort) {
     setupUserName.setCustomValidity('Имя персонажа не может содержать менее 2 символов');
   } else if (setupUserName.validity.tooLong) {
     setupUserName.setCustomValidity('Максимальная длина имени персонажа — 25 символов');
   } else if (setupUserName.validity.valueMissing) {
     setupUserName.setCustomValidity('Обязательное поле');
-  } 
+  }
 });
 
 // Изменение цвета мантии, глаз и файербола персонажа по нажатию
@@ -176,14 +176,14 @@ var onWizardCoatClick = function () {
 wizardCoat.addEventListener('click', onWizardCoatClick);
 
 var onWizardEyesClick = function () {
-	var wizardEyeColor = getRandomValueFromArray(EYE_COLORS);
+  var wizardEyeColor = getRandomValueFromArray(EYE_COLORS);
   wizardEyes.style.fill = wizardEyeColor;
 };
 
 wizardEyes.addEventListener('click', onWizardEyesClick);
 
 var onWizardBallsClick = function () {
-	var wizardBallColor = getRandomValueFromArray(FIREBALL_COLOR);
+  var wizardBallColor = getRandomValueFromArray(FIREBALL_COLOR);
   wizardBalls.style.background = wizardBallColor;
 };
 
